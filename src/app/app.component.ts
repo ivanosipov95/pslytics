@@ -1,13 +1,20 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {MatSlideToggleChange} from '@angular/material';
 
-import { environment } from '../environments/environment';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.styl']
 })
 export class AppComponent {
-  title = 'app';
+  fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
 
-  production = environment.production;
+
+  constructor() {
+  }
+
+
+  toggleTheme(change: MatSlideToggleChange) {
+    document.body.className = change.checked ? 'light-theme' : 'dark-theme';
+  }
 }
