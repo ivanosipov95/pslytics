@@ -4,9 +4,10 @@
       <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
       <h1 class="ps-toolbar__app-name">Pslytics</h1>
     </div>
-    <div>
-      <mat-slide-toggle (change)="toggleTheme($event)">Toggle Theme</mat-slide-toggle>
-    </div>
+    <theme-picker class="ps-toolbar__theme-picker"
+                  matTooltip="Theme picker"
+                  [theme]="theme"
+                  (closeMenu)="closeMenu($event)"></theme-picker>
   </mat-toolbar>
 
   <mat-sidenav-container class="sidenav-container">

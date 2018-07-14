@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SaleModel} from './sales.model';
+import {SalesService} from './sales.service';
 
 @Component({
   selector: 'sales',
@@ -102,10 +103,13 @@ export class SalesComponent implements OnInit {
   ];
 
 
-  constructor() {
+  constructor(private salesService: SalesService) {
   }
 
   ngOnInit() {
+    this.salesService.getSales().subscribe((resp) => {
+      console.log(resp);
+    });
   }
 
 }

@@ -1,0 +1,23 @@
+<button mat-icon-button [matMenuTriggerFor]="menu">
+  <mat-icon>format_color_fill</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      <div mat-menu-item class="theme-item" (click)="close(themes.dark)">
+        <div class="dark-theme">
+          <mat-icon class="dark-theme__icon" *ngIf="themes.dark === theme">check_circle</mat-icon>
+          <div class="dark-theme__item"></div>
+        </div>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+    <div mat-menu-item class="theme-item" (click)="close(themes.light)">
+      <div class="light-theme">
+        <mat-icon class="light-theme__icon" *ngIf="themes.light === theme">check_circle</mat-icon>
+        <div class="light-theme__item"></div>
+      </div>
+    </div>
+  </mat-grid-tile>
+  </mat-grid-list>
+</mat-menu>

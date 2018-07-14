@@ -1,0 +1,35 @@
+.theme-item
+  flex: 0 0 auto;
+  padding: 0;
+  overflow: hidden;
+
+$theme-placeholder
+  position relative
+  width 27px
+  height 27px
+  margin 10px
+  border-radius 50%
+  overflow hidden
+
+$theme-icon
+  position absolute
+  left 6%
+  top 6%
+
+.dark-theme
+  @extends $theme-placeholder
+  &__icon
+    @extends $theme-icon
+  &__item
+    background #e91e63
+    width 100%
+    height 100%
+
+.light-theme
+  @extends $theme-placeholder
+  &__icon
+    @extends $theme-icon
+  &__item
+    background #3f51b5
+    width 100%
+    height 100%

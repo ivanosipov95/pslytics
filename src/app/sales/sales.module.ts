@@ -9,6 +9,8 @@ import { SaleComponent } from './sale/sale.component';
 import { GridComponent } from './grid/grid.component';
 import { SearchComponent } from './search/search.component';
 
+import {SalesService} from './sales.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -20,6 +22,9 @@ import { SearchComponent } from './search/search.component';
     SaleComponent,
     GridComponent,
     SearchComponent
+  ],
+  providers: [
+    SalesService
   ]
 })
 export class SalesModule { }

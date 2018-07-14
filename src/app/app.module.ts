@@ -1,14 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
-import { Router } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Router} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
-import { MaterialModule } from './common/material/material.module';
-import { AppRoutingModule } from './app.routing.module';
-import { SalesModule } from './sales/sales.module';
+import {MaterialModule} from './common/material/material.module';
+import {AppRoutingModule} from './app.routing.module';
+import {SalesModule} from './sales/sales.module';
 
-import { AppComponent } from './app.component';
-
+import {AppComponent} from './app.component';
+import {ThemePickerModule} from './common/components/theme-picker/theme-picker.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MaterialModule,
+    ThemePickerModule,
     SalesModule,
     AppRoutingModule
   ],
