@@ -1,30 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+// import {StoreModule} from '@ngrx/store';
+// import {EffectsModule} from '@ngrx/effects';
 
-import { MaterialModule } from '../common/material/material.module';
-import { SalesRoutingModule } from './sales.routing.module';
+import {SalesRoutingModule} from './sales.routing.module';
 
-import { SalesComponent } from './sales.component';
-import { SaleComponent } from './sale/sale.component';
-import { GridComponent } from './grid/grid.component';
-import { SearchComponent } from './search/search.component';
 
-import {SalesService} from './sales.service';
+// import {salesReducer} from './store/reducers/sales.reducer';
+// import {AuthEffects} from './store/effects/sales.effect';
+import {AllSalesModule} from './all-sales/all-sales.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule,
+    // StoreModule.forFeature('sales', salesReducer),
+    // EffectsModule.forFeature([AuthEffects]),
     SalesRoutingModule
-  ],
-  declarations: [
-    SalesComponent,
-    SaleComponent,
-    GridComponent,
-    SearchComponent
-  ],
-  providers: [
-    SalesService
   ]
 })
 export class SalesModule { }

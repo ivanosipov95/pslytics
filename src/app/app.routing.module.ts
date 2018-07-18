@@ -7,6 +7,10 @@ const appRoutes: Routes = [
     redirectTo: '/sales',
     pathMatch: 'full'
   },
+  {
+    path: 'sales',
+    loadChildren: 'src/app/sales/sales.module#SalesModule'
+  },
   {path: '**', redirectTo: '/sales'}
 ];
 

@@ -1,11 +1,14 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import { SalesComponent } from './sales.component';
 
 const routes: Routes = [
   {
-    path: 'sales',
-    component: SalesComponent
+    path: '',
+    loadChildren: 'src/app/sales/all-sales/all-sales.module#AllSalesModule'
+  },
+  {
+    path: ':saleId',
+    loadChildren: 'src/app/sales/sale-details/sale-details.module#SaleDetailsModule'
   }
 ];
 

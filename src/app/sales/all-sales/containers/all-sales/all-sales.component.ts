@@ -1,15 +1,16 @@
 import {Component, OnInit} from '@angular/core';
-import {SaleModel} from './sales.model';
-import {SalesService} from './sales.service';
+import {AllSalesService} from '../../services';
+import {Sale} from '../../../models';
+import {tap} from 'rxjs/operators';
 
 @Component({
-  selector: 'sales',
-  templateUrl: './sales.component.html',
-  styleUrls: ['./sales.component.styl']
+  selector: 'all-sales',
+  templateUrl: './all-sales.component.html',
+  styleUrls: ['./all-sales.component.styl']
 })
-export class SalesComponent implements OnInit {
+export class AllSalesComponent implements OnInit {
 
-  sales: SaleModel[] = [
+  mockSales: any[] = [
     {
       gameName: '1 Game',
       price: 11,
@@ -103,12 +104,17 @@ export class SalesComponent implements OnInit {
   ];
 
 
-  constructor(private salesService: SalesService) {
+  sales: Sale[];
+
+  constructor(private allSalesService: AllSalesService) {
   }
 
   ngOnInit() {
-    this.salesService.getSales().subscribe((resp) => {
-      console.log(resp);
+    this.allSalesService.getSales()
+      .pipe(
+        tap(sales => console.log(sales))
+      ).subscribe((sales: Sale[]) => {
+      this.sales = sales;
     });
   }
 

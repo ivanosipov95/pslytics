@@ -6,7 +6,6 @@
   &__header
     display flex
     justify-content center
-  &__image
   &__actions
     display flex
     justify-content space-around
@@ -16,6 +15,10 @@
     display block
     font-weight bold
 
-
 .actions-btn
   background primary
+
+@media (max-width: 599px)
+  .mat-card-image
+    width calc(100% + 48px)
+    margin 0 -24px 16px -24pX

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {SaleModel} from '../sales.model';
+import {Sale, SaleModel} from '../../../models';
 
 @Component({
   selector: 'grid',
@@ -8,7 +8,8 @@ import {SaleModel} from '../sales.model';
 })
 export class GridComponent implements OnInit {
 
-  @Input() sales: SaleModel[];
+  @Input() mock: SaleModel[];
+  @Input() sales: Sale[];
 
   constructor() {
   }
