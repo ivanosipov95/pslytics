@@ -5,7 +5,17 @@
     <span class="content__price">Current price: {{sale.price}}</span>
   </mat-card-content>
   <mat-card-actions class="sale__actions">
-    <button mat-raised-button color="primary" [routerLink]="['/sales', sale.id]" class="actions-btn">DETAIL</button>
-    <button mat-raised-button color="primary" [disabled]="true" class="actions-btn">FOLLOW</button>
+    <button mat-raised-button
+            color="primary"
+            [routerLink]="['/sales', sale.id]"
+            class="actions-btn">
+      {{'SALE_CARD.DETAIL' | translate}}
+    </button>
+    <button mat-raised-button
+            color="primary"
+            [disabled]="true"
+            class="actions-btn">
+      {{'SALE_CARD.FOLLOW' | translate}}
+    </button>
   </mat-card-actions>
 </mat-card>

@@ -15,7 +15,7 @@ import {AllSalesModule} from './all-sales/all-sales.module';
     CommonModule,
     // StoreModule.forFeature('sales', salesReducer),
     // EffectsModule.forFeature([AuthEffects]),
-    SalesRoutingModule
+    SalesRoutingModule,
   ]
 })
 export class SalesModule { }

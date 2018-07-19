@@ -16,6 +16,7 @@ import {
   AllSalesService
 } from './services';
 import {MaterialModule} from '../../common/material/material.module';
+import {TranslateModule} from '@ngx-translate/core';
 
 
 const routes: Routes = [
@@ -29,7 +30,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MaterialModule
+    MaterialModule,
+    TranslateModule
   ],
   declarations: [
     SaleComponent,

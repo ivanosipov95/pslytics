@@ -1,14 +1,23 @@
 <section class="ps-container">
   <mat-toolbar class="ps-toolbar" color="primary">
     <div>
-      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      <button mat-icon-button (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
       <h1 class="ps-toolbar__app-name">Pslytics</h1>
     </div>
-    <theme-picker class="ps-toolbar__theme-picker"
-                  matTooltip="Theme picker"
-                  [theme]="theme"
-                  (closeMenu)="closeMenu($event)">
-    </theme-picker>
+    <div class="controls">
+      <theme-picker class="controls__theme-picker"
+                    matTooltip="Theme picker"
+                    [theme]="theme"
+                    (closeMenu)="closeMenu($event)">
+      </theme-picker>
+      <language-picker class="controls__language-picker"
+                       matTooltip="Language picker"
+                       [selectedLanguage]="selectedLanguage"
+                       [languages]="languages">
+      </language-picker>
+    </div>
   </mat-toolbar>
 
   <mat-sidenav-container class="sidenav-container">

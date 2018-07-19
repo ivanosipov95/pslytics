@@ -11,6 +11,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   exports: [
@@ -24,7 +25,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatInputModule,
     MatSlideToggleModule,
     MatMenuModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatRadioModule
   ]
 })
 export class MaterialModule { }
