@@ -4,14 +4,14 @@ import {NgModule} from '@angular/core';
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/sales',
+    redirectTo: '/products',
     pathMatch: 'full'
   },
   {
-    path: 'sales',
-    loadChildren: 'src/app/sales/sales.module#SalesModule'
+    path: 'products',
+    loadChildren: 'src/app/products/products.module#ProductsModule'
   },
-  {path: '**', redirectTo: '/sales'}
+  {path: '**', redirectTo: '/products'}
 ];
 
 @NgModule({

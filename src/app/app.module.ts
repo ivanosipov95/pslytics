@@ -32,7 +32,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     StoreModule.forRoot(reducer),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
-      logOnly: environment.production
+      logOnly: !environment.production
     }),
     EffectsModule.forRoot([AppEffects]),
     TranslateModule.forRoot({

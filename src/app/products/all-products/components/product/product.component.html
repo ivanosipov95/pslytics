@@ -1,0 +1,21 @@
+<mat-card class="product">
+  <img mat-card-image [src]="product.poster" alt="IMAGE">
+  <mat-card-content class="content">
+    <span class="content__title">{{product.name}}</span>
+    <span class="content__price">Current price: {{product.price}}</span>
+  </mat-card-content>
+  <mat-card-actions class="product__actions">
+    <button mat-raised-button
+            color="primary"
+            [routerLink]="['/products', product.id]"
+            class="actions-btn">
+      {{'SALE_CARD.DETAIL' | translate}}
+    </button>
+    <button mat-raised-button
+            color="primary"
+            [disabled]="true"
+            class="actions-btn">
+      {{'SALE_CARD.FOLLOW' | translate}}
+    </button>
+  </mat-card-actions>
+</mat-card>
