@@ -13,10 +13,9 @@ import {MaterialModule} from './common/material/material.module';
 import {AppRoutingModule} from './app.routing.module';
 
 import {AppComponent} from './app.component';
-import {ThemePickerModule} from './common/components/theme-picker/theme-picker.module';
-import {LanguagePickerComponent} from './common/components/language-picker/language-picker.component';
-import {reducer} from './store/app.reducer';
+import {reducer, AppEffects} from './store';
 import {environment} from '../environments/environment';
+import {HeaderModule} from './common/components/header/header.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -24,8 +23,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LanguagePickerComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +34,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       maxAge: 25,
       logOnly: environment.production
     }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([AppEffects]),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -45,7 +43,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     MaterialModule,
-    ThemePickerModule,
+    HeaderModule,
     AppRoutingModule
   ],
   providers: [],

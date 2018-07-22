@@ -8,8 +8,8 @@ import {Themes} from './themes.enum';
 })
 export class ThemePickerComponent implements OnInit {
 
-  @Input() theme: Themes;
-  @Output() closeMenu: EventEmitter<Themes> = new EventEmitter();
+  @Input() currentTheme: Themes;
+  @Output() toggleTheme: EventEmitter<Themes> = new EventEmitter();
 
   themes = Themes;
 
@@ -19,8 +19,7 @@ export class ThemePickerComponent implements OnInit {
   ngOnInit() {
   }
 
-
-  close($event) {
-    this.closeMenu.emit($event);
+  close($event: Themes) {
+    this.toggleTheme.emit($event);
   }
 }

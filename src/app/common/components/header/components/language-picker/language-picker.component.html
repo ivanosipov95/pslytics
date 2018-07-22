@@ -3,15 +3,12 @@
 </button>
 
 <mat-menu #languageMenu="matMenu">
-  <mat-radio-group (change)="changeLanguage($event)">
+  <mat-radio-group (change)="select($event)">
     <mat-radio-button class="radio-button"
                       *ngFor="let language of languages"
                       [value]="language"
-                      [checked]="selectedLanguage === language">
+                      [checked]="currentLanguage === language">
       {{language}}
     </mat-radio-button>
   </mat-radio-group>
 </mat-menu>
-
-<!--selected]="selectedLanguage === languages.ru"-->
-<!--(change)="change"-->
